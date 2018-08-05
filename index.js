@@ -12,5 +12,5 @@ app.use(express.static('public'));
 const io = socket(server);
 
 io.on('connection', function(socket) {
-    console.log('new socket connection setup successfully');
+    console.log('new socket connection setup successfully with socket id ', socket.id);
 });
