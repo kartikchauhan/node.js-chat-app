@@ -2,12 +2,14 @@ const express = require('express');
 const socket = require('socket.io');
 
 const app = express();
+app.set('port', (process.env.PORT || 8080));
 
-const server = app.listen(8080, function() {
+app.use(express.static('public'));
+
+const server = app.listen(app.get('port'), function() {
     console.log('Server started successfully');
 });
 
-app.use(express.static('public'));
 
 const io = socket(server);
 
