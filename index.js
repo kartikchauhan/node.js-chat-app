@@ -13,7 +13,12 @@ const io = socket(server);
 
 io.on('connection', function(socket) {
     console.log('new socket connection setup successfully with socket id ', socket.id);
+
     socket.on('chat', function(data) {
         io.sockets.emit('chat', data);
+    });
+
+    socket.on('typing', function(data) {
+        socket.broadcast.emit('typing', data);
     });
 });
