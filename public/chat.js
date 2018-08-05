@@ -1,4 +1,4 @@
-const socket = io.connect('https://node-chat-app-sockets.herokuapp.com:8080');
+const socket = io.connect('https://node-chat-app-sockets.herokuapp.com');
 
 var message = document.getElementById('message'),
     handle = document.getElementById('handle'),
